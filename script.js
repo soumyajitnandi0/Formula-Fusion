@@ -65,6 +65,16 @@ function factorial(){
         input.value="Invalid";
     }
 }
+function toggleRadDeg() {
+    isRadians = !isRadians;
+    const radDegButton = document.getElementById('rad-deg');
+    if (isRadians) {
+        radDegButton.textContent = 'Rad | Deg';
+    } else {
+        radDegButton.textContent = 'Deg | Rad';
+    }
+}
+
 let isDegree=true;
 function SinFunction(){
     const value=parseFloat(input.value);
