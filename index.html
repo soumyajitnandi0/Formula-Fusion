@@ -6,10 +6,25 @@
     </head>
     <body>
         <div class="calculator">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <input placeholder="0" id="inputBox" readonly>
+            <div class="input-container">
+
+                <button id="history-btn" onclick="toggleHistory()">
+                    <img src="restore.png" alt="History">
+                </button>
+
+                <input placeholder="0" id="inputBox" readonly>
+
+                <div id="history" style="display:none;">
+
+                    <button id="close-history-btn" onclick="toggleHistory()">X</button>   <!-- close button of history -->
+                    <h2>History</h2>
+                    <ul id="historyList"></ul>
+                </div>
+
+            </div>
+           
+            
             <div>
-                <button onclick="toggleHistory()" id="history-btn">History</button>
                 <button onclick="toggleRadDeg()" id="rad-deg">Rad | Deg</button>
                 <button onclick="factorial()">x!</button>
                 <button onclick="Display('(')">(</button>
@@ -53,11 +68,9 @@
                 <button onclick="Calculate()" id="equal">=</button>
                 <button onclick="Display('+')">+</button>
             </div>
+            
         </div>
-        <div id="history" style="display:none;">
-            <h2>History</h2>
-            <ul id="historyList"></ul>
-        </div>
+       
         <script src="script.js"></script>
     </body>
 </html>
