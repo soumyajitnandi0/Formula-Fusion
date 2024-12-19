@@ -66,18 +66,7 @@ function factorial(){
     }
 }
 
-function toggleRadDeg() { 
-    isDegree = !isDegree; 
-    const radButton = document.getElementById('rad'); 
-    const degButton = document.getElementById('deg'); 
-    if (isDegree) { 
-        radButton.style.display = 'inline-block'; 
-        degButton.style.display = 'none'; 
-    } else
-    { 
-        radButton.style.display = 'none'; 
-        degButton.style.display = 'inline-block';
-    }
+
 
 let isDegree=true;
 function SinFunction(){
