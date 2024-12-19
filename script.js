@@ -147,14 +147,29 @@ function PiFunction() {
 function EFunction() { 
     input.value = Math.E; 
 }
+function toggleDeg() {
+    const degreeValue = parseFloat(input.value);
+    if (isNaN(degreeValue)) {
+        input.value = "Invalid";
+        return;
+    }
+    const radianValue = degreeToRadian(degreeValue);
+    saveToHistory(`Degree: ${degreeValue} = Radian: ${radianValue}`);
+    input.value = radianValue;
+}
+function radianToDegree(radian) {
+    return radian * (180 / Math.PI);
+}
+function degreeToRadian(degree) {
+    return degree * (Math.PI / 180);
+}
 function Remove(){
-    if(input.value==="Invalid" || input.value==="Infinity"){
+    if(input.value==="Invalid" || input.value==="Infinity" || input.value==="undefined"){
         input.value="";
     }
     input.value=input.value.slice(0,-1);
 }
 
-//flip button functionality
 function flipCalculator() {
     const calculator = document.querySelector('.calculator');
     calculator.classList.toggle('flipped');
@@ -173,8 +188,6 @@ function flipCalculator() {
         scientific.forEach(button => button.style.display = 'none');
     }
 }
-
-// layout adjust
 function adjustCalculatorLayout() {
     const flipButton = document.querySelector("#flip");
     const digits = document.querySelectorAll('.digits');
@@ -184,26 +197,18 @@ function adjustCalculatorLayout() {
     const body = document.getElementsByClassName('calculator');
 
     if (window.innerWidth > 501) {
-        // Hide flip button
         flipButton.style.display = 'none';
-        
-        // Show all buttons
         digits.forEach(button => button.style.display = 'inline-block');
         opr.forEach(button => button.style.display = 'inline-block');
         scientific.forEach(button => button.style.display = 'inline-block');
         arithmetic.forEach(button => button.style.display = 'inline-block');
     } else {
-        // Show flip button
         flipButton.style.display = 'inline-block';
-
-        // Adjust visibility based on flip state
         const calculator = document.querySelector('.calculator');
         if (!calculator.classList.contains('flipped')) {
             scientific.forEach(button => button.style.display = 'none');
         }
     }
 }
-
-// Add event listeners for resizing and initial load
 window.addEventListener('resize', adjustCalculatorLayout);
 window.addEventListener('load', adjustCalculatorLayout);
