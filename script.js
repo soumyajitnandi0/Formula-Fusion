@@ -138,7 +138,7 @@ function InvFunction() {
 } 
 
 function PowFunction() { 
-    input.value += ""; 
+    input.value += "**"; 
 }
 function SqrtFunction() { 
     const value = parseFloat(input.value); 
