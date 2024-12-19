@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style.css">
         <title>Calculator</title>
     </head>
@@ -25,48 +26,51 @@
            
             
             <div>
-                <button onclick="toggleRadDeg()" id="rad-deg">Rad | Deg</button>
-                <button onclick="factorial()">x!</button>
-                <button onclick="Display('(')">(</button>
-                <button onclick="Display(')')">)</button>
-                <button onclick="Display('%')">%</button>
-                <button onclick="Remove()">CE</button>
+                <button onclick="toggleRadDeg()" id="rad" class="scientific">Rad</button>
+                <button onclick="toggleRadDeg()" id="deg" class="scientific">Deg</button>
+                <button onclick="factorial()" class="scientific">x!</button>
+                <button onclick="Display('(')" class="opr">(</button>
+                <button onclick="Display(')')" class="opr">)</button>
+                <button onclick="Display('%')" class="opr">%</button>
+                <button onclick="Remove()" class="arithmetic">CE</button>
             </div>
             <div>
-                <button onclick="InvFunction()">Inv</button>
-                <button onclick="SinFunction()">sin</button>
-                <button onclick="LnFunction()">ln</button>
-                <button onclick="Display('7')" id="btn">7</button>
-                <button onclick="Display('8')" id="btn">8</button>
-                <button onclick="Display('9')" id="btn">9</button>
-                <button onclick="Display('/')">&divide;</button>
+                <button onclick="InvFunction()" class="scientific">Inv</button>
+                <button onclick="SinFunction()" class="scientific">sin</button>
+                <button onclick="LnFunction()" class="scientific">ln</button>
+                <button onclick="Display('7')" class="digits">7</button>
+                <button onclick="Display('8')" class="digits">8</button>
+                <button onclick="Display('9')" class="digits">9</button>
+                <button onclick="Display('/')" class="arithmetic">&divide;</button>
             </div>
             <div>
-                <button onclick="PiFunction()">&pi;</button>
-                <button onclick="CosFunction()">cos</button>
-                <button onclick="LogFunction()">log</button>
-                <button onclick="Display('4')" id="btn">4</button>
-                <button onclick="Display('5')" id="btn">5</button>
-                <button onclick="Display('6')" id="btn">6</button>
-                <button onclick="Display('*')">*</button>
+                <button onclick="PiFunction()" class="scientific">&pi;</button>
+                <button onclick="CosFunction()" class="scientific">cos</button>
+                <button onclick="LogFunction()" class="scientific">log</button>
+                <button onclick="Display('4')" class="digits">4</button>
+                <button onclick="Display('5')" class="digits">5</button>
+                <button onclick="Display('6')" class="digits">6</button>
+                <button onclick="Display('*')" class="arithmetic">*</button>
             </div>
             <div>
-                <button onclick="EFunction()">e</button>
-                <button onclick="TanFunction()">tan</button>
-                <button onclick="SqrtFunction()">&radic;</button>
-                <button onclick="Display('1')" id="btn">1</button>
-                <button onclick="Display('2')" id="btn">2</button>
-                <button onclick="Display('3')" id="btn">3</button>
-                <button onclick="Display('-')">-</button>
+                <button onclick="EFunction()" class="scientific">e</button>
+                <button onclick="TanFunction()" class="scientific">tan</button>
+                <button onclick="SqrtFunction()" class="scientific">&radic;</button>
+                <button onclick="Display('1')" class="digits">1</button>
+                <button onclick="Display('2')" class="digits">2</button>
+                <button onclick="Display('3')" class="digits">3</button>
+                <button onclick="Display('-')" class="arithmetic">-</button>
             </div>
             <div>
-                <button onclick="ClearDisplay()">AC</button>
-                <button onclick="Exponential()">EXP</button>
-                <button onclick="">x<sup>y</sup></button>
-                <button onclick="Display('0')" id="btn">0</button>
-                <button onclick="Display('.')" id="btn">.</button>
-                <button onclick="Calculate()" id="equal">=</button>
-                <button onclick="Display('+')">+</button>
+                <button onclick="ClearDisplay()" class="arithmetic">AC</button>
+                <button onclick="Exponential()" class="scientific">EXP</button>
+                <button onclick="" class="scientific">x<sup>y</sup></button>
+                <button onclick="Display('0')" class="digits">0</button>
+                <button onclick="Display('.')" class="digits">.</button>
+                <button onclick="Display('+')" class="arithmetic">+</button>
+                <button id="flip"  onclick="flipCalculator()" style="display: inline-block;">FLIP</button>  <!--  flip button -->
+                <button onclick="Calculate()" id="equal" class="arithmetic">=</button>
+
             </div>
             
         </div>

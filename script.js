@@ -65,6 +65,7 @@ function factorial(){
         input.value="Invalid";
     }
 }
+
 function toggleRadDeg() {
     isRadians = !isRadians;
     const radDegButton = document.getElementById('rad-deg');
@@ -155,5 +156,62 @@ function EFunction() {
     input.value = Math.E; 
 }
 function Remove(){
+    if(input.value==="Invalid" || input.value==="Infinity"){
+        input.value="";
+    }
     input.value=input.value.slice(0,-1);
 }
+
+//flip button functionality
+function flipCalculator() {
+    const calculator = document.querySelector('.calculator');
+    calculator.classList.toggle('flipped');
+
+    const digits = document.querySelectorAll('.digits');
+    const opr = document.querySelectorAll('.opr');
+    const scientific = document.querySelectorAll('.scientific');
+
+    if (calculator.classList.contains('flipped')) {
+        digits.forEach(button => button.style.display = 'none');
+        opr.forEach(button => button.style.display = 'none');
+        scientific.forEach(button => button.style.display = 'inline-block');
+    } else {
+        digits.forEach(button => button.style.display = 'inline-block');
+        opr.forEach(button => button.style.display = 'inline-block');
+        scientific.forEach(button => button.style.display = 'none');
+    }
+}
+
+// layout adjust
+function adjustCalculatorLayout() {
+    const flipButton = document.querySelector("#flip");
+    const digits = document.querySelectorAll('.digits');
+    const opr = document.querySelectorAll('.opr');
+    const scientific = document.querySelectorAll('.scientific');
+    const arithmetic = document.querySelectorAll('.arithmetic');
+    const body = document.getElementsByClassName('calculator');
+
+    if (window.innerWidth > 501) {
+        // Hide flip button
+        flipButton.style.display = 'none';
+        
+        // Show all buttons
+        digits.forEach(button => button.style.display = 'inline-block');
+        opr.forEach(button => button.style.display = 'inline-block');
+        scientific.forEach(button => button.style.display = 'inline-block');
+        arithmetic.forEach(button => button.style.display = 'inline-block');
+    } else {
+        // Show flip button
+        flipButton.style.display = 'inline-block';
+
+        // Adjust visibility based on flip state
+        const calculator = document.querySelector('.calculator');
+        if (!calculator.classList.contains('flipped')) {
+            scientific.forEach(button => button.style.display = 'none');
+        }
+    }
+}
+
+// Add event listeners for resizing and initial load
+window.addEventListener('resize', adjustCalculatorLayout);
+window.addEventListener('load', adjustCalculatorLayout);
