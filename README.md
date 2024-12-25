@@ -58,5 +58,8 @@ A fully functional scientific calculator designed for advanced mathematical comp
 - [Soumyajit Nandi](https://github.com/soumyajitnandi0)
 
 ---
+**Deploy**
+-Netlify-(https://unique-profiterole-7eb686.netlify.app/)
 
+---
 **Enjoy using the Scientific Calculator!**
